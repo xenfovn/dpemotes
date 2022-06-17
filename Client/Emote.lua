@@ -130,6 +130,7 @@ AddEventHandler('animations:client:SmokeWeed', function()
         if SmokingWeed then
           SmokingWeed = false
           RelieveCount = 0
+          SetCurrentPedWeapon(PlayerPedId(), 'weapon_unarmed')
         end
       end
     end
@@ -185,6 +186,9 @@ function EmoteCancel()
     SmokingWeed = false
     RelieveCount = 0
   end
+  
+  SetCurrentPedWeapon(PlayerPedId(), 'weapon_unarmed')
+  
 end
 
 function EmoteChatMessage(args)
